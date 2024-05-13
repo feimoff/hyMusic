@@ -1,0 +1,25 @@
+<!-- 1.Vant搜索框 -->
+<van-search value="{{ searchValue }}" shape="round" background="#fafafa" placeholder="请输入搜索关键词" bind:search="onSearchClick" />
+
+<!-- 轮播图 -->
+<cmp-swiper class="banner-image" />
+
+<!-- 五个图标区域 -->
+<cmp-icons />
+
+<!-- 推荐歌曲区域 -->
+<view class="recommend" wx:if="{{recRanking.length}}">
+  <area-header title="推荐歌曲" bind:moreclick="onRecommendMoreClick"/>
+  <view class="list" >
+    <block wx:for="{{recRanking}}" wx:key="id">
+      <song-item-v1 itemData="{{item}}" data-index="{{index}}" />
+    </block>
+  </view>
+</view>
+
+<!-- 歌单区域 -->
+<cmp-menu-area title="热门歌单" menuList="{{hotMenuList}}" />
+<cmp-menu-area title="流行歌单" menuList="{{recMenuList}}" />
+
+<!-- 榜单区域 -->
+<cmp-ranking wx:if="{{isRankingData}}" rankingInfos="{{rankingInfos}}" />

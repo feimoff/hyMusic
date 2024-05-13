@@ -1,0 +1,7 @@
+<swiper class="banner" circular indicator-dots autoplay style="height: {{bannerHeight}}rpx;" wx:if="{{banners.length}}">
+  <block wx:for="{{banners}}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="banner-image" src="{{item.imageUrl}}" mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>

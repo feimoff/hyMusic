@@ -1,0 +1,12 @@
+<!-- 如果是歌单数据,就展示歌单头部详情 -->
+<view class="header" wx:if="{{type === 'menu' && songInfo.name}}">
+  <cmp-menu-header songInfo="{{songInfo}}" />
+</view>
+<!-- 如果是榜单数据,就不展示歌单头部详情 -->
+<view class="title" wx:else>{{songInfo.name}}</view>
+
+<view class="song-list">
+  <block wx:for="{{songInfo.tracks}}" wx:key="id">
+    <song-item-v2 itemData="{{item}}" index="{{index+1}}" menuList="{{menuList}}" bindtap="onSongItemTap" />
+  </block>
+</view>

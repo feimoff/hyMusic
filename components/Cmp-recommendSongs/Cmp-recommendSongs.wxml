@@ -1,0 +1,1 @@
+<button bind:tap="btnClick">点击</button>

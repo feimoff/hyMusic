@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#d43c33",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "cmp-swiper":"/components/Cmp-swiper/Cmp-swiper",
+    "cmp-icons":"/components/Cmp-icons/Cmp-icons",
+    "cmp-recommendSongs":"/components/Cmp-recommendSongs/Cmp-recommendSongs",
+    "song-item-v1":"/components/song-item-v1/song-item-v1",
+    "area-header":"/components/area-header/area-header",
+    "cmp-menu-area":"/components/Cmp-menu-area/menu-area",
+    "cmp-ranking":"/components/Cmp-ranking/Cmp-ranking"
+  }
+}

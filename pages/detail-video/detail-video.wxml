@@ -1,0 +1,13 @@
+<wxs src="../../utils/format.wxs" module="fmt" />
+
+<video class="video" src="{{mvUrl}}" autoplay danmu-list="{{danmuList}}" referrer-policy="origin" />
+
+<scroll-view class="content" scroll-y>
+  <view class="info">
+    <view>歌手：{{ mvInfo.artistName }}</view>
+    <view>时长：{{fmt.formatTime(mvInfo.duration)}}</view>
+    <view>播放数：{{fmt.formatCount(mvInfo.playCount)}}</view>
+    <view>分享数：{{fmt.formatCount(mvInfo.shareCount)}}</view>
+    <view>发布时间：{{mvInfo.publishTime}}</view>
+  </view>
+</scroll-view>

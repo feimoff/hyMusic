@@ -1,0 +1,17 @@
+<view class="video-list">
+  <block wx:for="{{videoList}}" wx:key="index">
+    <view class="item">
+      <wxs src="/utils/format.wxs" module="fmt"></wxs>
+      <view class="itemData" bind:tap="itemDataClick" data-item="{{item}}">
+        <view class="album">
+          <image class="image" mode="widthFix" src="{{item.cover}}"></image>
+          <view class="info">
+            <view class="count">{{fmt.formatCount(item.playCount)}}</view>
+            <view class="duration">{{fmt.formatTime(item.mv.videos[0].duration)}}</view>
+          </view>
+        </view>
+        <view class="content">{{item.name}} - {{item.artistName}}</view>
+      </view>
+    </view>
+  </block>
+</view>

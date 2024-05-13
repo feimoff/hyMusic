@@ -1,0 +1,55 @@
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
+<!-- 1.背景展示 -->
+<view class="container">
+  <image class="bg-image" src="{{currentSong.al.picUrl}}" mode="aspectFill"></image>
+  <view class="bg-cover"></view>
+</view>
+<!-- 导航栏 -->
+<nav-bar>
+  <view class="tabs" slot="center">
+    <block wx:for="{{pageTitles}}" wx:key="*this">
+      <view class="item {{currentPage === index ? 'active': ''}}" bindtap="onNavTabItemTap" data-index="{{index}}">
+        {{item}}
+      </view>
+      <view class="divider" wx:if="{{index !== pageTitles.length - 1}}">|</view>
+    </block>
+  </view>
+</nav-bar>
+<!-- 3-具体内容 -->
+<swiper current="{{currentPage}}" style="height: {{contentHeight}}px;" bindchange="onSwiperChange">
+  <swiper-item class="music">
+    <!-- 封面图 -->
+    <view class="album">
+      <image class="image" src="{{currentSong.al.picUrl}}" mode="widthFix"></image>
+    </view>
+    <!-- 歌词名和歌手名 -->
+    <view class="info">
+      <view class="name">{{currentSong.name}}</view>
+      <view class="singer">{{currentSong.ar[0].name}}</view>
+    </view>
+    <!-- 当前歌词 -->
+    <view class="lyric">
+      我是一句歌词
+    </view>
+    <!-- 滑块 -->
+    <view class="progress">
+      <slider class="slider" block-size="12" />
+      <view class="time">
+        <view class="current">03:22</view>
+        <view class="duration">05:45</view>
+      </view>
+    </view>
+    <!-- 控制上/下一首歌并且暂停 -->
+    <view class="controls">
+      <image class="btn mode" src="/assets/images/player/play_order.png" />
+      <image class="btn prev" src="/assets/images/player/play_prev.png" />
+      <image class="btn play" src="/assets/images/player/play_pause.png" />
+      <image class="btn next" src="/assets/images/player/play_next.png" />
+      <image class="btn list" src="/assets/images/player/play_music.png" />
+    </view>
+  </swiper-item>
+
+  <swiper-item class="歌词">
+    <view>歌词</view>
+  </swiper-item>
+</swiper>

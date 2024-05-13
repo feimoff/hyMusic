@@ -1,0 +1,14 @@
+<view class="item" bindtap="onSongItemTap">
+  <view class="index">{{index}}</view>
+  <view class="info">
+    <view class="name">{{itemData.name}}</view>
+    <view class="source">
+      <image class="icon" src="/assets/images/icons/sq_icon.png"></image>
+      <text>{{itemData.ar[0].name}}</text>
+    </view>
+  </view>
+
+  <view class="icon" catch:tap="onIconTap">
+    <van-icon class="more-icon" name="more-o" />
+  </view>
+</view>

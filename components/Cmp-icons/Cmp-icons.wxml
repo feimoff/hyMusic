@@ -1,0 +1,22 @@
+<view class="navContainer">
+  <view class="navItem">
+    <text class="iconfont icon-meirituijian"></text>
+    <text>每日推荐</text>
+  </view>
+  <view class="navItem">
+    <text class="iconfont icon-fenleiorguangchangorqita"></text>
+    <text>Other页面</text>
+  </view>
+  <view class="navItem">
+    <text class="iconfont icon-paihang"></text>
+    <text>排行榜</text>
+  </view>
+  <view class="navItem">
+    <text class="iconfont icon-yinle"></text>
+    <text>电台</text>
+  </view>
+  <view class="navItem">
+    <text class="iconfont icon-15"></text>
+    <text>MV</text>
+  </view>
+</view>

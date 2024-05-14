@@ -2,6 +2,8 @@ import rankingStore from "../../store/rankingStore"
 import {
   getSongMenuList
 } from "../../services/music"
+import playerStore from "../../store/playerStore"
+
 Page({
   data: {
     banners: [],
@@ -27,7 +29,7 @@ Page({
       this.setData({
         rankingInfos: result,
         recRanking: result['hotRanking'].tracks.slice(0, 6),
-        isRankingData:true
+        isRankingData: true
       })
     }
   },
@@ -46,14 +48,20 @@ Page({
       })
     })
   },
-  // 
-  onRecommendMoreClick(){
+  // 推荐歌曲右上角的更多点击
+  onRecommendMoreClick() {
     wx.navigateTo({
       url: '/pages/detail-song/detail-song?type=ranking&key=hotRanking',
     })
   },
-   // 搜索
-   onSearchClick() {},
+  // 监听song-item-v1的点击
+  onSongItemTap(event) {
+    const index = event.currentTarget.dataset.index
+    playerStore.setState("playSongList", this.data?.rankingInfos["hotRanking"]?.tracks.slice(0, 6))
+    playerStore.setState("playSongIndex", index)
+  },
+  // 搜索
+  onSearchClick() {},
   // 使用重构后的通用函数来处理不同类型的榜单
   // 热歌榜
   handleHotRanking(value) {

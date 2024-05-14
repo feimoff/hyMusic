@@ -5,7 +5,7 @@
   <view class="bg-cover"></view>
 </view>
 <!-- 导航栏 -->
-<nav-bar>
+<nav-bar bind:leftclick="onNavBackTap">
   <view class="tabs" slot="center">
     <block wx:for="{{pageTitles}}" wx:key="*this">
       <view class="item {{currentPage === index ? 'active': ''}}" bindtap="onNavTabItemTap" data-index="{{index}}">
@@ -17,6 +17,7 @@
 </nav-bar>
 <!-- 3-具体内容 -->
 <swiper current="{{currentPage}}" style="height: {{contentHeight}}px;" bindchange="onSwiperChange">
+  <!-- 歌曲页 -->
   <swiper-item class="music">
     <!-- 封面图 -->
     <view class="album">
@@ -29,27 +30,34 @@
     </view>
     <!-- 当前歌词 -->
     <view class="lyric">
-      我是一句歌词
+      {{currentLyricText}}
     </view>
     <!-- 滑块 -->
     <view class="progress">
-      <slider class="slider" block-size="12" />
+      <slider bindchange="onSliderChange" bindchanging="onSliderChanging" value="{{sliderValue}}" class="slider" block-size="12" />
       <view class="time">
-        <view class="current">03:22</view>
-        <view class="duration">05:45</view>
+        <view class="current">{{fmt.formatTime(currentTime)}}</view>
+        <view class="duration">{{fmt.formatTime(durationTime)}}</view>
       </view>
     </view>
     <!-- 控制上/下一首歌并且暂停 -->
     <view class="controls">
-      <image class="btn mode" src="/assets/images/player/play_order.png" />
-      <image class="btn prev" src="/assets/images/player/play_prev.png" />
-      <image class="btn play" src="/assets/images/player/play_pause.png" />
-      <image class="btn next" src="/assets/images/player/play_next.png" />
+      <image bindtap="onModeBtnTap" class="btn mode" src="/assets/images/player/play_{{playModeName}}.png" />
+      <image class="btn prev" bindtap="onPrevBtnTap" src="/assets/images/player/play_prev.png" />
+      <image bindtap="onPlayOrPauseTap" class="btn play" src="/assets/images/player/play_{{ isPlaying? 'resume': 'pause' }}.png" />
+      <image class="btn next" bindtap="onNextBtnTap" src="/assets/images/player/play_next.png" />
       <image class="btn list" src="/assets/images/player/play_music.png" />
     </view>
   </swiper-item>
 
-  <swiper-item class="歌词">
-    <view>歌词</view>
+  <!-- 歌词页 -->
+  <swiper-item>
+    <scroll-view class="lyric-list" scroll-y scroll-top="{{lyricScrollTop}}" scroll-with-animation>
+      <block wx:for="{{lyricInfos}}" wx:key="time">
+        <view class="item {{currentLyricIndex === index ? 'active': ''}}" style="padding-top: {{index === 0 ? (contentHeight/2-66) : 0}}px; padding-bottom: {{ index === lyricInfos.length - 1 ? (contentHeight/2+66) : 0 }}px;">
+          {{item.text}}
+        </view>
+      </block>
+    </scroll-view>
   </swiper-item>
 </swiper>

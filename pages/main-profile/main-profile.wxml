@@ -1,2 +1,6 @@
-<!--pages/main-profile/main-profile.wxml-->
-<text>pages/main-profile/main-profile.wxml</text>
+<view class="container">
+  <view class="userInfo section">
+    <text  class="iconfont icon-morenyonghuzhuanhuan- avatar">未登录</text>
+    <view class="nickname">用户名</view>
+  </view>
+</view>

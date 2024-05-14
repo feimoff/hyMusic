@@ -33,7 +33,7 @@
 }
 
 
-/* 歌曲布局 */
+/* 歌曲页 */
 .music {
   display: flex;
   flex-direction: column;
@@ -95,13 +95,38 @@
       width: 60rpx;
       height: 60rpx;
     }
+
     .btn.mode {
       width: 80rpx;
       height: 80rpx;
-    } 
+    }
+
     .btn.play {
       width: 140rpx;
       height: 140rpx;
-    }    
+    }
+  }
+}
+
+/* 歌词页 */
+.lyric-list {
+  color: #aaa;
+  font-size: 28rpx;
+  text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40rpx;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .item {
+    height: 35px;
+    line-height: 35px;
+  }
+  .item.active {
+    color: #0f0;
+    font-size: 32rpx;
   }
 }

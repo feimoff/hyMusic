@@ -9,6 +9,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "main-login",
+          "pathName": "pages/main-login/main-login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "main-profile",
+          "pathName": "pages/main-profile/main-profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "main-player",
           "pathName": "pages/main-player/main-player",
           "query": "",

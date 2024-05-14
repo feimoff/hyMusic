@@ -1,1 +1,27 @@
-/* pages/main-profile/main-profile.wxss */
+page {
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: #f3f3f3;
+}
+.container .section {
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.container .userInfo {
+  display: flex;
+  align-items: center;
+}
+.container .userInfo .avatar {
+  font-size: 80rpx;
+  padding-right: 10rpx;
+}
+.container .userInfo .image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.container .userInfo .nickname {
+  margin-left: 15rpx;
+}

@@ -36,7 +36,7 @@ Page({
         this.data.id = id
         this.fetchMenuSongInfo()
       } else {
-        this.setData({ 
+        this.setData({
           songInfo: menuRes
         })
       }

@@ -7,7 +7,8 @@
     "pages/detail-song/detail-song",
     "pages/detail-menu/detail-menu",
     "components/Cmp-menu-header/Cmp-menu-header",
-    "pages/main-player/main-player"
+    "pages/main-player/main-player",
+    "pages/main-login/main-login"
   ],
   "window": {
     "backgroundTextStyle": "dark",
